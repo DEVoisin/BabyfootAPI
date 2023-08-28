@@ -55,6 +55,21 @@ namespace BabyfootAPI.Services
                 throw new Exception(ex.Message);
             }
         }
+
+        public async Task<Team> UpdateTeam(Team team)
+        {
+            try
+            {
+                _context.Teams.Update(team);
+                await _context.SaveChangesAsync();
+                return team;
+            }
+            catch (DbUpdateException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public async Task<List<Team>> GetTeams()
         {
             return await _context.Teams.ToListAsync();

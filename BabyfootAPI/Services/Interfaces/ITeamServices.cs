@@ -6,10 +6,12 @@ namespace BabyfootAPI.Services.Interfaces
     {
         Task<Team> AddTeam(Team team);
         Task<Team> RemoveTeam(int teamId);
+
+        Task<Team> UpdateTeam(Team team);
         Task<List<Team>> GetTeams();
         Task<Team?> GetTeamById(int teamId);
-        Task<string> UpdateTeamName(int teamId, string name);
-        Task<string> UpdateTeamElo(int teamId, decimal elo);
+        //Task<string> UpdateTeamName(int teamId, string name);
+        //Task<string> UpdateTeamElo(int teamId, decimal elo);
         Task<bool> TeamExist(int firstPlayerId, int secondPlayerId);
     }
 }
